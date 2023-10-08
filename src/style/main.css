@@ -14,8 +14,19 @@
   --clr-secondary-450: hsl(177, 100%, 46%);
   --clr-default-250: hsl(219, 50%, 25%);
   --clr-default-450: hsl(219, 50%, 45%);
+  --clr-default-850: hsl(219, 50%, 85%);
+  --clr-neutral-350: hsl(0, 0%, 35%);
   --clr-neutral-450: hsl(0, 0%, 45%);
+  --clr-neutral-750: hsl(0, 0%, 75%);
+  --clr-neutral-950: hsl(0, 0%, 95%);
+  --clr-neutral-1000: hsl(0, 0%, 100%);
   --clr-positive-450: hsl(154, 80%, 45%);
+  --clr-negative-150: hsl(0, 93%, 28%);
+  --clr-negative-250: hsl(0, 80%, 35%);
+  --clr-negative-350: hsl(0, 80%, 39%);
+  --clr-negative-450: hsl(0, 80%, 45%);
+  --clr-negative-850: hsl(0, 74%, 89%);
+  --clr-negative-950: hsl(0, 80%, 95%);
 }
 :root .fc-primary-50 {
   color: hsl(226, 95%, 5%);
@@ -62,11 +73,44 @@
 :root .fc-default-450 {
   color: hsl(219, 50%, 45%);
 }
+:root .fc-default-850 {
+  color: hsl(219, 50%, 85%);
+}
+:root .fc-neutral-350 {
+  color: hsl(0, 0%, 35%);
+}
 :root .fc-neutral-450 {
   color: hsl(0, 0%, 45%);
 }
+:root .fc-neutral-750 {
+  color: hsl(0, 0%, 75%);
+}
+:root .fc-neutral-950 {
+  color: hsl(0, 0%, 95%);
+}
+:root .fc-neutral-1000 {
+  color: hsl(0, 0%, 100%);
+}
 :root .fc-positive-450 {
   color: hsl(154, 80%, 45%);
+}
+:root .fc-negative-150 {
+  color: hsl(0, 93%, 28%);
+}
+:root .fc-negative-250 {
+  color: hsl(0, 80%, 35%);
+}
+:root .fc-negative-350 {
+  color: hsl(0, 80%, 39%);
+}
+:root .fc-negative-450 {
+  color: hsl(0, 80%, 45%);
+}
+:root .fc-negative-850 {
+  color: hsl(0, 74%, 89%);
+}
+:root .fc-negative-950 {
+  color: hsl(0, 80%, 95%);
 }
 
 :root {
@@ -299,11 +343,70 @@ select {
   }
 }
 body {
-  font-family: Poppins, sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
 }
 
 .heading {
   color: var(--clr-default-250);
+  font-family: Poppins, sans-serif;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 0.25rem;
+  height: 3rem;
+  padding-inline: 1.5rem;
+  width: -moz-min-content;
+  width: min-content;
+}
+.button:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+.button--disabled, .button--disabled:hover {
+  cursor: not-allowed;
+}
+.button--primary {
+  color: var(--clr-neutral-1000);
+  background-color: var(--clr-primary-600);
+}
+.button--primary:hover {
+  color: var(--clr-default-850);
+  background-color: var(--clr-primary-500);
+}
+.button--primary.button--disabled, .button--primary.button--disabled:hover {
+  background-color: var(--clr-neutral-350);
+  color: var(--clr-neutral-750);
+}
+.button--secondary {
+  background-color: var(--clr-primary-970);
+  color: var(--clr-primary-600);
+}
+.button--secondary:hover {
+  color: var(--clr-primary-500);
+  background-color: var(--clr-primary-900);
+}
+.button--secondary.button--disabled, .button--secondary.button--disabled:hover {
+  background-color: var(--clr-neutral-950);
+  color: var(--clr-neutral-450);
+}
+.button--destructive-primary {
+  background-color: var(--clr-negative-450);
+  color: var(--clr-neutral-1000);
+}
+.button--destructive-primary:hover {
+  background-color: var(--clr-negative-350);
+  color: var(--clr-negative-950);
+}
+.button--destructive-secondary {
+  background-color: var(--clr-negative-950);
+  color: var(--clr-negative-250);
+}
+.button--destructive-secondary:hover {
+  background-color: var(--clr-negative-850);
+  color: var(--clr-negative-150);
 }
 
 .container {

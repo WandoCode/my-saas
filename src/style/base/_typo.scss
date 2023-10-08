@@ -2,8 +2,10 @@
 
 body {
   font-family: $font-primary;
+  font-size: 16px;
 }
 
 .heading {
   color: var(--clr-default-250);
+  font-family: $font-secondary;
 }
