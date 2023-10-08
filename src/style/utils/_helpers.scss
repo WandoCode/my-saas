@@ -1,6 +1,15 @@
 @use '../abstracts/' as *;
 
 .container {
+  max-width: 1440px;
+  width: calc(100% - 2rem);
+  margin-inline: auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /**

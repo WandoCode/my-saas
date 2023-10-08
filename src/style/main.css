@@ -12,6 +12,7 @@
   --clr-primary-950: hsl(226, 95%, 95%);
   --clr-primary-970: hsl(226, 95%, 97%);
   --clr-secondary-450: hsl(177, 100%, 46%);
+  --clr-default-250: hsl(219, 50%, 25%);
   --clr-default-450: hsl(219, 50%, 45%);
   --clr-neutral-450: hsl(0, 0%, 45%);
   --clr-positive-450: hsl(154, 80%, 45%);
@@ -54,6 +55,9 @@
 }
 :root .fc-secondary-450 {
   color: hsl(177, 100%, 46%);
+}
+:root .fc-default-250 {
+  color: hsl(219, 50%, 25%);
 }
 :root .fc-default-450 {
   color: hsl(219, 50%, 45%);
@@ -295,5 +299,37 @@ select {
   }
 }
 body {
-  font-family: "Poppins", "sans-serif";
+  font-family: Poppins, sans-serif;
+}
+
+.heading {
+  color: var(--clr-default-250);
+}
+
+.container {
+  max-width: 1440px;
+  width: calc(100% - 2rem);
+  margin-inline: auto;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }/*# sourceMappingURL=main.css.map */
