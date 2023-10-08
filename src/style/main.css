@@ -1,12 +1,68 @@
 :root {
-  --clr-primary-400: hsl(192, 70%, 51%);
-  --clr-neutral-400: hsl(233, 8%, 62%);
+  --clr-primary-50: hsl(226, 95%, 5%);
+  --clr-primary-100: hsl(226, 95%, 10%);
+  --clr-primary-200: hsl(226, 95%, 20%);
+  --clr-primary-300: hsl(226, 95%, 30%);
+  --clr-primary-400: hsl(226, 95%, 40%);
+  --clr-primary-500: hsl(226, 95%, 50%);
+  --clr-primary-600: hsl(226, 95%, 61%);
+  --clr-primary-700: hsl(226, 95%, 70%);
+  --clr-primary-800: hsl(226, 95%, 80%);
+  --clr-primary-900: hsl(226, 95%, 90%);
+  --clr-primary-950: hsl(226, 95%, 95%);
+  --clr-primary-970: hsl(226, 95%, 97%);
+  --clr-secondary-450: hsl(177, 100%, 46%);
+  --clr-default-450: hsl(219, 50%, 45%);
+  --clr-neutral-450: hsl(0, 0%, 45%);
+  --clr-positive-450: hsl(154, 80%, 45%);
+}
+:root .fc-primary-50 {
+  color: hsl(226, 95%, 5%);
+}
+:root .fc-primary-100 {
+  color: hsl(226, 95%, 10%);
+}
+:root .fc-primary-200 {
+  color: hsl(226, 95%, 20%);
+}
+:root .fc-primary-300 {
+  color: hsl(226, 95%, 30%);
 }
 :root .fc-primary-400 {
-  color: hsl(192, 70%, 51%);
+  color: hsl(226, 95%, 40%);
 }
-:root .fc-neutral-400 {
-  color: hsl(233, 8%, 62%);
+:root .fc-primary-500 {
+  color: hsl(226, 95%, 50%);
+}
+:root .fc-primary-600 {
+  color: hsl(226, 95%, 61%);
+}
+:root .fc-primary-700 {
+  color: hsl(226, 95%, 70%);
+}
+:root .fc-primary-800 {
+  color: hsl(226, 95%, 80%);
+}
+:root .fc-primary-900 {
+  color: hsl(226, 95%, 90%);
+}
+:root .fc-primary-950 {
+  color: hsl(226, 95%, 95%);
+}
+:root .fc-primary-970 {
+  color: hsl(226, 95%, 97%);
+}
+:root .fc-secondary-450 {
+  color: hsl(177, 100%, 46%);
+}
+:root .fc-default-450 {
+  color: hsl(219, 50%, 45%);
+}
+:root .fc-neutral-450 {
+  color: hsl(0, 0%, 45%);
+}
+:root .fc-positive-450 {
+  color: hsl(154, 80%, 45%);
 }
 
 :root {
@@ -79,6 +135,111 @@ a:hover, a:active, a:focus, a:focus-within {
   text-decoration: underline;
 }
 
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Bold.woff2") format("woff2"), url("OpenSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-ExtraBold.woff2") format("woff2"), url("OpenSans-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Light.woff2") format("woff2"), url("OpenSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Medium.woff2") format("woff2"), url("OpenSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-SemiBold.woff2") format("woff2"), url("OpenSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
+  src: url("OpenSans-Regular.woff2") format("woff2"), url("OpenSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Bold.woff2") format("woff2"), url("Poppins-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-ExtraBold.woff2") format("woff2"), url("Poppins-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Black.woff2") format("woff2"), url("Poppins-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-ExtraLight.woff2") format("woff2"), url("Poppins-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Medium.woff2") format("woff2"), url("Poppins-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Light.woff2") format("woff2"), url("Poppins-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-SemiBold.woff2") format("woff2"), url("Poppins-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Regular.woff2") format("woff2"), url("Poppins-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("Poppins-Thin.woff2") format("woff2"), url("Poppins-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
 body,
 h1,
 h2,
