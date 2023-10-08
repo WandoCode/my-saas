@@ -1,0 +1,7 @@
+@use './functions' as *;
+
+$breakpoints: (
+  'small': in-rem(320),
+  'medium': in-rem(768),
+  'large': in-rem(1024),
+);

@@ -1,0 +1,44 @@
+@use './mixins' as *;
+
+$scales: (
+  sm: (
+    300: 1rem,
+    400: 1.125rem,
+    500: 1.563rem,
+    600: 1.953rem,
+    700: 2.441rem,
+    800: 3.052rem,
+  ),
+  lg: (
+    300: 1rem,
+    400: 1.425rem,
+    500: 2rem,
+    600: 2.827rem,
+    700: 4rem,
+    800: 3.052rem,
+  ),
+);
+
+$weights: (
+  light: 300,
+  normal: 400,
+  bold: 600,
+);
+
+:root {
+  /// Build css custom variables for colors
+  @each $screen-size, $sizes in $scales {
+    @each $size, $scale in $sizes {
+      --fs-#{$screen-size}-#{$size}: #{$scale};
+    }
+  }
+
+  // /// Build css utility for colors
+  @each $screen-size, $sizes in $scales {
+    @each $size, $scale in $sizes {
+      .fs-#{$screen-size}-#{$size} {
+        font-size: #{$scale};
+      }
+    }
+  }
+}

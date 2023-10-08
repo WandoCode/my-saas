@@ -1,0 +1,21 @@
+@use '../abstracts/' as *;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: var(--clr-primary-400);
+  text-decoration: none;
+
+  @include on-event {
+    color: var(--clr-primary-500);
+    text-decoration: underline;
+  }
+}

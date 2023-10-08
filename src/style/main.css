@@ -1,0 +1,90 @@
+:root {
+  --clr-primary-400: hsl(192, 70%, 51%);
+  --clr-neutral-400: hsl(233, 8%, 62%);
+}
+:root .fc-primary-400 {
+  color: hsl(192, 70%, 51%);
+}
+:root .fc-neutral-400 {
+  color: hsl(233, 8%, 62%);
+}
+
+:root {
+  --fs-sm-300: 1rem;
+  --fs-sm-400: 1.125rem;
+  --fs-sm-500: 1.563rem;
+  --fs-sm-600: 1.953rem;
+  --fs-sm-700: 2.441rem;
+  --fs-sm-800: 3.052rem;
+  --fs-lg-300: 1rem;
+  --fs-lg-400: 1.425rem;
+  --fs-lg-500: 2rem;
+  --fs-lg-600: 2.827rem;
+  --fs-lg-700: 4rem;
+  --fs-lg-800: 3.052rem;
+}
+:root .fs-sm-300 {
+  font-size: 1rem;
+}
+:root .fs-sm-400 {
+  font-size: 1.125rem;
+}
+:root .fs-sm-500 {
+  font-size: 1.563rem;
+}
+:root .fs-sm-600 {
+  font-size: 1.953rem;
+}
+:root .fs-sm-700 {
+  font-size: 2.441rem;
+}
+:root .fs-sm-800 {
+  font-size: 3.052rem;
+}
+:root .fs-lg-300 {
+  font-size: 1rem;
+}
+:root .fs-lg-400 {
+  font-size: 1.425rem;
+}
+:root .fs-lg-500 {
+  font-size: 2rem;
+}
+:root .fs-lg-600 {
+  font-size: 2.827rem;
+}
+:root .fs-lg-700 {
+  font-size: 4rem;
+}
+:root .fs-lg-800 {
+  font-size: 3.052rem;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  color: var(--clr-primary-400);
+  text-decoration: none;
+}
+a:hover, a:active, a:focus, a:focus-within {
+  color: var(--clr-primary-500);
+  text-decoration: underline;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}/*# sourceMappingURL=main.css.map */

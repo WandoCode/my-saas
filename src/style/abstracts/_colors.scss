@@ -1,0 +1,26 @@
+$colors: (
+  primary: (
+    400: hsl(192, 70%, 51%),
+  ),
+  neutral: (
+    400: hsl(233, 8%, 62%),
+  ),
+);
+
+:root {
+  /// Build css custom variables for colors
+  @each $color-type, $shades in $colors {
+    @each $shade, $color in $shades {
+      --clr-#{$color-type}-#{$shade}: #{$color};
+    }
+  }
+
+  /// Build css utility for colors
+  @each $color-type, $shades in $colors {
+    @each $shade, $color in $shades {
+      .fc-#{$color-type}-#{$shade} {
+        color: $color;
+      }
+    }
+  }
+}
