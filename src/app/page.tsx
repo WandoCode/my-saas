@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Button } from './components'
 
 export default function Home() {
@@ -7,11 +8,12 @@ export default function Home() {
         <section className="hero">
           <div className="hero__container center">
             <h1 className="hero__title heading h1">
-              Discover&nbsp;
-              <span className="fc-primary-600">Fleximed</span>
+              Find quickly the{' '}
+              <span className="fc-primary-600">healthcare worker</span> you need
+              !
             </h1>
             <h2 className="heading subtitle">
-              Find easily healthcare worker you can trust!
+              The effortless way to find the worker who fit your current need
             </h2>
             <div className="align hero__ctas">
               <Button as="next-link" variant="primary" className="hero__btn-a">
@@ -24,6 +26,17 @@ export default function Home() {
               >
                 Schedule a demo
               </Button>
+            </div>
+            <div className="hero__image hero-image">
+              <div className="hero-image__container">
+                <Image
+                  src="/placeholder.svg"
+                  alt="image demo"
+                  height={800}
+                  width={1200}
+                  priority={true}
+                />
+              </div>
             </div>
           </div>
         </section>
