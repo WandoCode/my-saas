@@ -271,8 +271,7 @@ a {
   text-decoration: none;
 }
 a:hover, a:active, a:focus, a:focus-within {
-  color: var(--clr-primary-500);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 @font-face {
@@ -443,7 +442,7 @@ body {
   color: var(--clr-default-250);
   font-family: Poppins, sans-serif;
   text-align: center;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .h1 {
@@ -457,6 +456,7 @@ body {
 
 .subtitle {
   font-size: 16px;
+  font-weight: 400;
 }
 @media (min-width: 64rem) {
   .subtitle {
@@ -465,14 +465,19 @@ body {
 }
 
 .button {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   border-radius: 0.25rem;
   height: 3rem;
   padding-inline: 1.5rem;
   width: -moz-fit-content;
   width: fit-content;
   text-align: center;
+}
+@media (min-width: 64rem) {
+  .button {
+    font-size: 16px;
+  }
 }
 .button:hover {
   cursor: pointer;
@@ -522,22 +527,28 @@ body {
   color: var(--clr-negative-150);
 }
 
+.hero {
+  margin-top: 120px;
+}
 .hero__container {
+  gap: 3rem;
   margin-inline: auto;
 }
 @media (min-width: 64rem) {
   .hero__container {
+    gap: 3rem;
     max-width: 70%;
   }
 }
 .hero__ctas {
-  gap: 2rem;
+  gap: 1.5rem;
   flex-direction: column;
   width: 100%;
 }
 @media (min-width: 64rem) {
   .hero__ctas {
     flex-direction: row;
+    gap: 2.5rem;
   }
 }
 .hero__btn-a, .hero__btn-b {

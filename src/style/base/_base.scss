@@ -15,7 +15,6 @@ a {
   text-decoration: none;
 
   @include on-event {
-    color: var(--clr-primary-500);
-    text-decoration: underline;
+    text-decoration: none;
   }
 }

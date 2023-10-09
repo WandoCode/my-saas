@@ -1,16 +1,36 @@
+@use '../../abstracts/' as *;
+
 .hero {
+  margin-top: 120px;
   &__container {
-    max-width: 70%;
+    gap: 3rem;
     margin-inline: auto;
+
+    @include breakpoint('large') {
+      gap: 3rem;
+
+      max-width: 70%;
+    }
   }
 
   &__ctas {
-    width: 50%;
-    gap: 2rem;
+    gap: 1.5rem;
+    flex-direction: column;
+    width: 100%;
+
+    @include breakpoint('large') {
+      flex-direction: row;
+      gap: 2.5rem;
+    }
   }
 
   &__btn-a,
   &__btn-b {
-    flex-basis: 100%;
+    width: 100%;
+    max-width: 250px;
+
+    @include breakpoint('large') {
+      flex-basis: 100%;
+    }
   }
 }

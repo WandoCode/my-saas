@@ -6,8 +6,8 @@ export default function Home() {
       <div className="container center">
         <section className="hero">
           <div className="hero__container center">
-            <h1 className="heading h1">
-              Exemple d'un site web avec le branding de&nbsp;
+            <h1 className="hero__title heading h1">
+              Discover&nbsp;
               <span className="fc-primary-600">Fleximed</span>
             </h1>
             <h2 className="heading subtitle">
@@ -15,7 +15,7 @@ export default function Home() {
             </h2>
             <div className="align hero__ctas">
               <Button as="next-link" variant="primary" className="hero__btn-a">
-                Découvrir
+                Discover
               </Button>
               <Button
                 as="next-link"

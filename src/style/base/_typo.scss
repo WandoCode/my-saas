@@ -9,13 +9,22 @@ body {
   color: var(--clr-default-250);
   font-family: $font-secondary;
   text-align: center;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .h1 {
-  font-size: 72px;
+  font-size: 32px;
+
+  @include breakpoint('large') {
+    font-size: 72px;
+  }
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 400;
+
+  @include breakpoint('large') {
+    font-size: 20px;
+  }
 }
