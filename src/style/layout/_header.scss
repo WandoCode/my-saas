@@ -1,0 +1,20 @@
+// Desktop first!!!
+@use '../abstracts/' as *;
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: $header-height-lg;
+  background-color: rgb(255, 255, 255);
+
+  &__logo-container {
+    margin-left: 3rem;
+  }
+
+  &__logo {
+    height: 45px;
+    width: auto;
+  }
+}
