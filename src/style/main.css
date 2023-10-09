@@ -11,10 +11,33 @@
   --clr-primary-900: hsl(226, 95%, 90%);
   --clr-primary-950: hsl(226, 95%, 95%);
   --clr-primary-970: hsl(226, 95%, 97%);
+  --clr-secondary-100: hsl(177, 100%, 10%);
+  --clr-secondary-150: hsl(177, 100%, 15%);
+  --clr-secondary-250: hsl(177, 100%, 25%);
+  --clr-secondary-350: hsl(177, 100%, 35%);
   --clr-secondary-450: hsl(177, 100%, 46%);
+  --clr-secondary-550: hsl(177, 100%, 55%);
+  --clr-secondary-650: hsl(177, 100%, 65%);
+  --clr-secondary-750: hsl(177, 100%, 75%);
+  --clr-secondary-850: hsl(177, 100%, 85%);
+  --clr-secondary-950: hsl(177, 100%, 95%);
+  --clr-accent-100: hsl(302, 87%, 22%);
+  --clr-accent-200: hsl(302, 87%, 32%);
+  --clr-accent-300: hsl(302, 87%, 42%);
+  --clr-accent-400: hsl(302, 87%, 52%);
+  --clr-accent-500: hsl(302, 87%, 62%);
+  --clr-accent-600: hsl(302, 87%, 72%);
+  --clr-accent-700: hsl(302, 87%, 82%);
+  --clr-accent-800: hsl(302, 87%, 92%);
+  --clr-accent-900: hsl(302, 87%, 100%);
   --clr-default-250: hsl(219, 50%, 25%);
+  --clr-default-350: hsl(219, 50%, 35%);
   --clr-default-450: hsl(219, 50%, 45%);
+  --clr-default-550: hsl(219, 50%, 55%);
+  --clr-default-650: hsl(219, 50%, 65%);
+  --clr-default-750: hsl(219, 50%, 75%);
   --clr-default-850: hsl(219, 50%, 85%);
+  --clr-default-950: hsl(219, 50%, 95%);
   --clr-neutral-350: hsl(0, 0%, 35%);
   --clr-neutral-450: hsl(0, 0%, 45%);
   --clr-neutral-750: hsl(0, 0%, 75%);
@@ -64,17 +87,86 @@
 :root .fc-primary-970 {
   color: hsl(226, 95%, 97%);
 }
+:root .fc-secondary-100 {
+  color: hsl(177, 100%, 10%);
+}
+:root .fc-secondary-150 {
+  color: hsl(177, 100%, 15%);
+}
+:root .fc-secondary-250 {
+  color: hsl(177, 100%, 25%);
+}
+:root .fc-secondary-350 {
+  color: hsl(177, 100%, 35%);
+}
 :root .fc-secondary-450 {
   color: hsl(177, 100%, 46%);
+}
+:root .fc-secondary-550 {
+  color: hsl(177, 100%, 55%);
+}
+:root .fc-secondary-650 {
+  color: hsl(177, 100%, 65%);
+}
+:root .fc-secondary-750 {
+  color: hsl(177, 100%, 75%);
+}
+:root .fc-secondary-850 {
+  color: hsl(177, 100%, 85%);
+}
+:root .fc-secondary-950 {
+  color: hsl(177, 100%, 95%);
+}
+:root .fc-accent-100 {
+  color: hsl(302, 87%, 22%);
+}
+:root .fc-accent-200 {
+  color: hsl(302, 87%, 32%);
+}
+:root .fc-accent-300 {
+  color: hsl(302, 87%, 42%);
+}
+:root .fc-accent-400 {
+  color: hsl(302, 87%, 52%);
+}
+:root .fc-accent-500 {
+  color: hsl(302, 87%, 62%);
+}
+:root .fc-accent-600 {
+  color: hsl(302, 87%, 72%);
+}
+:root .fc-accent-700 {
+  color: hsl(302, 87%, 82%);
+}
+:root .fc-accent-800 {
+  color: hsl(302, 87%, 92%);
+}
+:root .fc-accent-900 {
+  color: hsl(302, 87%, 100%);
 }
 :root .fc-default-250 {
   color: hsl(219, 50%, 25%);
 }
+:root .fc-default-350 {
+  color: hsl(219, 50%, 35%);
+}
 :root .fc-default-450 {
   color: hsl(219, 50%, 45%);
 }
+:root .fc-default-550 {
+  color: hsl(219, 50%, 55%);
+}
+:root .fc-default-650 {
+  color: hsl(219, 50%, 65%);
+}
+:root .fc-default-750 {
+  color: hsl(219, 50%, 75%);
+}
 :root .fc-default-850 {
   color: hsl(219, 50%, 85%);
+}
+:root .fc-default-950 {
+  color: hsl(219, 50%, 95%);
 }
 :root .fc-neutral-350 {
   color: hsl(0, 0%, 35%);
@@ -350,6 +442,16 @@ body {
 .heading {
   color: var(--clr-default-250);
   font-family: Poppins, sans-serif;
+  text-align: center;
+  font-weight: 400;
+}
+
+.h1 {
+  font-size: 72px;
+}
+
+.subtitle {
+  font-size: 20px;
 }
 
 .button {
@@ -358,8 +460,8 @@ body {
   border-radius: 0.25rem;
   height: 3rem;
   padding-inline: 1.5rem;
-  width: -moz-min-content;
-  width: min-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .button:hover {
   cursor: pointer;
@@ -409,6 +511,18 @@ body {
   color: var(--clr-negative-150);
 }
 
+.hero__container {
+  max-width: 70%;
+  margin-inline: auto;
+}
+.hero__ctas {
+  width: 50%;
+  gap: 2rem;
+}
+.hero__btn-a, .hero__btn-b {
+  flex-basis: 100%;
+}
+
 .container {
   max-width: 1440px;
   width: calc(100% - 2rem);
@@ -416,6 +530,13 @@ body {
 }
 
 .center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.align {
   display: flex;
   justify-content: center;
   align-items: center;

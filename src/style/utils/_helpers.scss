@@ -8,10 +8,16 @@
 
 .center {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /**
  * Hide element while making it readable for screen readers
  * Shamelessly borrowed from HTML5Boilerplate:

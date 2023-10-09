@@ -8,4 +8,14 @@ body {
 .heading {
   color: var(--clr-default-250);
   font-family: $font-secondary;
+  text-align: center;
+  font-weight: 400;
+}
+
+.h1 {
+  font-size: 72px;
+}
+
+.subtitle {
+  font-size: 20px;
 }

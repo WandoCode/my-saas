@@ -1,0 +1,16 @@
+.hero {
+  &__container {
+    max-width: 70%;
+    margin-inline: auto;
+  }
+
+  &__ctas {
+    width: 50%;
+    gap: 2rem;
+  }
+
+  &__btn-a,
+  &__btn-b {
+    flex-basis: 100%;
+  }
+}
