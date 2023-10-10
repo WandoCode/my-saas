@@ -15,12 +15,22 @@
   --clr-secondary-150: hsl(177, 100%, 15%);
   --clr-secondary-250: hsl(177, 100%, 25%);
   --clr-secondary-350: hsl(177, 100%, 35%);
+  --clr-secondary-400: hsl(177, 100%, 42%);
   --clr-secondary-450: hsl(177, 100%, 46%);
   --clr-secondary-550: hsl(177, 100%, 55%);
   --clr-secondary-650: hsl(177, 100%, 65%);
   --clr-secondary-750: hsl(177, 100%, 75%);
   --clr-secondary-850: hsl(177, 100%, 85%);
   --clr-secondary-950: hsl(177, 100%, 95%);
+  --clr-tertiary-100: hsl(201, 91%, 10%);
+  --clr-tertiary-200: hsl(201, 91%, 20%);
+  --clr-tertiary-300: hsl(201, 91%, 30%);
+  --clr-tertiary-400: hsl(201, 91%, 40%);
+  --clr-tertiary-500: hsl(201, 91%, 50%);
+  --clr-tertiary-600: hsl(201, 91%, 60%);
+  --clr-tertiary-700: hsl(201, 91%, 70%);
+  --clr-tertiary-800: hsl(201, 91%, 80%);
+  --clr-tertiary-900: hsl(201, 91%, 90%);
   --clr-accent-100: hsl(302, 87%, 22%);
   --clr-accent-200: hsl(302, 87%, 32%);
   --clr-accent-300: hsl(302, 87%, 42%);
@@ -37,7 +47,9 @@
   --clr-default-650: hsl(219, 50%, 65%);
   --clr-default-750: hsl(219, 50%, 75%);
   --clr-default-850: hsl(219, 50%, 85%);
+  --clr-default-900: hsl(219, 50%, 90%);
   --clr-default-950: hsl(219, 50%, 95%);
+  --clr-default-970: hsl(219, 50%, 97%);
   --clr-neutral-350: hsl(0, 0%, 35%);
   --clr-neutral-450: hsl(0, 0%, 45%);
   --clr-neutral-550: hsl(0, 0%, 55%);
@@ -102,6 +114,9 @@
 :root .fc-secondary-350 {
   color: hsl(177, 100%, 35%);
 }
+:root .fc-secondary-400 {
+  color: hsl(177, 100%, 42%);
+}
 :root .fc-secondary-450 {
   color: hsl(177, 100%, 46%);
 }
@@ -119,6 +134,33 @@
 }
 :root .fc-secondary-950 {
   color: hsl(177, 100%, 95%);
+}
+:root .fc-tertiary-100 {
+  color: hsl(201, 91%, 10%);
+}
+:root .fc-tertiary-200 {
+  color: hsl(201, 91%, 20%);
+}
+:root .fc-tertiary-300 {
+  color: hsl(201, 91%, 30%);
+}
+:root .fc-tertiary-400 {
+  color: hsl(201, 91%, 40%);
+}
+:root .fc-tertiary-500 {
+  color: hsl(201, 91%, 50%);
+}
+:root .fc-tertiary-600 {
+  color: hsl(201, 91%, 60%);
+}
+:root .fc-tertiary-700 {
+  color: hsl(201, 91%, 70%);
+}
+:root .fc-tertiary-800 {
+  color: hsl(201, 91%, 80%);
+}
+:root .fc-tertiary-900 {
+  color: hsl(201, 91%, 90%);
 }
 :root .fc-accent-100 {
   color: hsl(302, 87%, 22%);
@@ -168,8 +210,14 @@
 :root .fc-default-850 {
   color: hsl(219, 50%, 85%);
 }
+:root .fc-default-900 {
+  color: hsl(219, 50%, 90%);
+}
 :root .fc-default-950 {
   color: hsl(219, 50%, 95%);
+}
+:root .fc-default-970 {
+  color: hsl(219, 50%, 97%);
 }
 :root .fc-neutral-350 {
   color: hsl(0, 0%, 35%);
@@ -285,7 +333,7 @@ html {
 }
 
 a {
-  color: var(--clr-primary-400);
+  color: var(--clr-default-250);
   text-decoration: none;
 }
 a:hover, a:active, a:focus, a:focus-within {
@@ -547,25 +595,45 @@ body {
 
 .nav__item {
   position: relative;
-  gap: 5px;
+  gap: 3px;
   padding: 0.75rem;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
 }
-.nav__item--active {
-  text-decoration: underline;
+.nav__item:hover > a {
+  color: var(--clr-primary-400);
 }
-.nav__expand-img--active {
+.nav__item:hover .nav__expand-img {
   transform: rotate(180deg);
+  filter: brightness(0) saturate(100%) invert(14%) sepia(94%) saturate(3241%) hue-rotate(228deg) brightness(98%) contrast(113%);
+}
+.nav__item:hover .nav__submenu {
+  display: grid;
+}
+.nav__expand-img {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(7%) saturate(5986%) hue-rotate(185deg) brightness(94%) contrast(92%);
 }
 .nav__submenu {
   display: none;
   position: absolute;
-  left: 0;
-  right: 0;
+  left: -0.75rem;
   top: 100%;
-  padding-left: 0.75rem;
+  padding: 0.75rem;
+  width: -moz-max-content;
+  width: max-content;
+  background-color: var(--clr-neutral-1000);
+  color: var(--clr-default-250);
+  border-radius: 8px;
+  box-shadow: 0 0.1875rem 0.375rem rgba(18, 20, 23, 0.0274509804), 0 0.625rem 1.25rem rgba(18, 20, 23, 0.0274509804), 0 -0.1875rem 0.75rem rgba(18, 20, 23, 0.0274509804);
 }
-.nav__submenu--active {
-  display: grid;
+.nav__subitem {
+  padding: 0.75rem 1rem;
+}
+.nav__subitem:hover {
+  background-color: var(--clr-default-970);
+  border-radius: 8px;
 }
 
 .header {
@@ -576,6 +644,10 @@ body {
   width: 100%;
   height: 120px;
   background-color: rgb(255, 255, 255);
+}
+.header--scroll {
+  height: 80px;
+  box-shadow: 0 0.1875rem 0.375rem rgba(189, 190, 192, 0.0274509804), 0 0.625rem 1.25rem rgba(189, 190, 192, 0.0274509804);
 }
 .header__logo-container, .header__empty-container {
   width: 250px;

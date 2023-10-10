@@ -17,7 +17,7 @@ main {
 }
 
 a {
-  color: var(--clr-primary-400);
+  color: var(--clr-default-250);
   text-decoration: none;
 
   @include on-event {

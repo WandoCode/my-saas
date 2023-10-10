@@ -1,9 +1,6 @@
-'use client'
-
-import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import { PropsWithChildren, useId, useState } from 'react'
+import { PropsWithChildren } from 'react'
 
 interface PropsNavItem extends PropsWithChildren {
   href: string
@@ -11,38 +8,24 @@ interface PropsNavItem extends PropsWithChildren {
 }
 
 function NavItem({ href, subItems, children }: PropsNavItem) {
-  const [isHover, setIsHover] = useState<boolean>(false)
-
-  const toggleHover = () => {
-    setIsHover((a) => !a)
-  }
-
   return (
-    <li
-      className={clsx('nav__item align', { 'nav__item--active': isHover })}
-      onMouseEnter={toggleHover}
-      onMouseLeave={toggleHover}
-    >
+    <li className="nav__item align">
       <Link href={href}>{children}</Link>
 
       {subItems && (
         <Image
-          className={clsx('nav__expand-img', {
-            'nav__expand-img--active': isHover,
-          })}
+          className="nav__expand-img--active"
           src="/expand.svg"
           height={16}
-          width={16}
+          width={20}
           alt=" "
         />
       )}
 
       {subItems && (
-        <ul
-          className={clsx('nav__submenu', { 'nav__submenu--active': isHover })}
-        >
+        <ul className="nav__submenu">
           {subItems.map((subItem) => (
-            <li key={useId()} className="nav__subitem">
+            <li key={subItem.name} className="nav__subitem">
               <Link href={subItem.href}>{subItem.name}</Link>
             </li>
           ))}

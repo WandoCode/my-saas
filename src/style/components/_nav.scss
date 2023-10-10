@@ -1,32 +1,60 @@
 // Desktop first
+
+@use '../abstracts/' as *;
+
 $spacing: 0.75rem;
 
 .nav {
   &__item {
     position: relative;
-    gap: 5px;
+    gap: 3px;
     padding: $spacing;
+    font-family: $font-secondary;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
 
-    &--active {
-      text-decoration: underline;
+    &:hover {
+      & > a {
+        color: var(--clr-primary-400);
+      }
+
+      & .nav__expand-img {
+        transform: rotate(180deg);
+        filter: $clr-primary-400-svg;
+      }
+
+      & .nav__submenu {
+        display: grid;
+      }
     }
   }
 
   &__expand-img {
-    &--active {
-      transform: rotate(180deg);
-    }
+    filter: $clr-default-250-svg;
   }
+
   &__submenu {
     display: none;
     position: absolute;
-    left: 0;
-    right: 0;
+    left: -$spacing;
     top: 100%;
-    padding-left: $spacing;
+    padding: 0.75rem;
 
-    &--active {
-      display: grid;
+    width: max-content;
+
+    background-color: var(--clr-neutral-1000);
+    color: var(--clr-default-250);
+    border-radius: 8px;
+    box-shadow: 0 0.1875rem 0.375rem #12141707, 0 0.625rem 1.25rem #12141707,
+      0 -0.1875rem 0.75rem #12141707;
+  }
+
+  &__subitem {
+    padding: 0.75rem 1rem;
+    &:hover {
+      background-color: var(--clr-default-970);
+      border-radius: 8px;
     }
   }
 }

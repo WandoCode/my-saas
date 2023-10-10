@@ -1,6 +1,4 @@
-import Link from 'next/link'
 import { NavItem } from '.'
-import { useId } from 'react'
 
 const navLinks = [
   {
@@ -43,7 +41,7 @@ function Nav() {
     <nav className="nav">
       <ul className="nav__list align">
         {navLinks.map((link) => (
-          <NavItem key={useId()} href={link.href} subItems={link.subItems}>
+          <NavItem key={link.name} href={link.href} subItems={link.subItems}>
             {link.name}
           </NavItem>
         ))}
