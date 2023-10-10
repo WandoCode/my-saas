@@ -1,0 +1,32 @@
+// Desktop first
+$spacing: 0.75rem;
+
+.nav {
+  &__item {
+    position: relative;
+    gap: 5px;
+    padding: $spacing;
+
+    &--active {
+      text-decoration: underline;
+    }
+  }
+
+  &__expand-img {
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+  &__submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding-left: $spacing;
+
+    &--active {
+      display: grid;
+    }
+  }
+}

@@ -14,9 +14,7 @@ function Header() {
         />
       </div>
       <Nav></Nav>
-      <div className="header__empty-container">
-        {/* A utiliser pour center la nav sur la page avec un justify-content dans le header */}
-      </div>
+      <div className="header__empty-container"></div>
     </header>
   )
 }

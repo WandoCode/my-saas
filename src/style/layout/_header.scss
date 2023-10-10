@@ -1,15 +1,20 @@
 // Desktop first!!!
 @use '../abstracts/' as *;
 
+$side-width: 250px;
+
 .header {
   position: fixed;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: $header-height-lg;
   background-color: rgb(255, 255, 255);
 
-  &__logo-container {
+  &__logo-container,
+  &__empty-container {
+    width: $side-width;
     margin-left: 3rem;
   }
 
