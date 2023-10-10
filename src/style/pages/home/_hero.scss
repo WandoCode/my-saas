@@ -5,6 +5,7 @@
 
   &__container {
     gap: 3rem;
+
     margin-inline: auto;
 
     @include breakpoint('large') {
@@ -17,6 +18,7 @@
   &__ctas {
     gap: 1.5rem;
     flex-direction: column;
+
     width: 100%;
 
     @include breakpoint('large') {
@@ -27,8 +29,8 @@
 
   &__btn-a,
   &__btn-b {
-    width: 100%;
     max-width: 250px;
+    width: 100%;
 
     @include breakpoint('large') {
       flex-basis: 100%;
@@ -38,6 +40,7 @@
   &__image {
     margin-top: 2em;
     margin-bottom: 3rem;
+
     @include breakpoint('large') {
       margin-top: 4rem;
       margin-bottom: 4rem;

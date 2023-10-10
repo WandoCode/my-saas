@@ -5,21 +5,26 @@ $side-width: 250px;
 
 .header {
   position: fixed;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   width: 100%;
   height: $header-height-lg;
+
   background-color: rgb(255, 255, 255);
 
   &--scroll {
     height: $header-height-lg--scroll;
+
     box-shadow: 0 0.1875rem 0.375rem #bdbec007, 0 0.625rem 1.25rem #bdbec007;
   }
 
   &__logo-container,
   &__empty-container {
     width: $side-width;
+
     margin-left: 3rem;
   }
 

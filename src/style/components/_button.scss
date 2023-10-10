@@ -1,13 +1,15 @@
 @use '../abstracts/' as *;
 
 .button {
-  font-size: 15px;
+  width: fit-content;
+  height: in-rem(48);
+
+  padding-inline: in-rem(24);
+
+  border-radius: in-rem(4);
 
   font-weight: 600;
-  border-radius: in-rem(4);
-  height: in-rem(48);
-  padding-inline: in-rem(24);
-  width: fit-content;
+  font-size: 15px;
   text-align: center;
 
   @include breakpoint('large') {
@@ -15,8 +17,9 @@
   }
 
   &:hover {
-    cursor: pointer;
     text-decoration: none;
+
+    cursor: pointer;
   }
 
   &--disabled,
@@ -25,8 +28,8 @@
   }
 
   &--primary {
-    color: var(--clr-neutral-1000);
     background-color: var(--clr-primary-600);
+    color: var(--clr-neutral-1000);
 
     &:hover {
       color: var(--clr-default-850);
@@ -35,14 +38,14 @@
 
     &.button--disabled,
     &.button--disabled:hover {
-      background-color: var(--clr-neutral-350);
       color: var(--clr-neutral-750);
+      background-color: var(--clr-neutral-350);
     }
   }
 
   &--secondary {
-    background-color: var(--clr-primary-970);
     color: var(--clr-primary-600);
+    background-color: var(--clr-primary-970);
 
     &:hover {
       color: var(--clr-primary-500);
@@ -51,28 +54,28 @@
 
     &.button--disabled,
     &.button--disabled:hover {
-      background-color: var(--clr-neutral-950);
       color: var(--clr-neutral-450);
+      background-color: var(--clr-neutral-950);
     }
   }
 
   &--destructive-primary {
-    background-color: var(--clr-negative-450);
     color: var(--clr-neutral-1000);
+    background-color: var(--clr-negative-450);
 
     &:hover {
-      background-color: var(--clr-negative-350);
       color: var(--clr-negative-950);
+      background-color: var(--clr-negative-350);
     }
   }
 
   &--destructive-secondary {
-    background-color: var(--clr-negative-950);
     color: var(--clr-negative-250);
+    background-color: var(--clr-negative-950);
 
     &:hover {
-      background-color: var(--clr-negative-850);
       color: var(--clr-negative-150);
+      background-color: var(--clr-negative-850);
     }
   }
 }

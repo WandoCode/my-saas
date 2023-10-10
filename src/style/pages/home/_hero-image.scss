@@ -1,13 +1,15 @@
 .hero-image {
   &__container {
+    padding: 8px;
+
     border-radius: 6px;
     border: 1px solid var(--clr-neutral-950);
-    padding: 8px;
     box-shadow: 3px 3px 10px 0px var(--clr-neutral-850);
   }
 
   & img {
     height: auto;
+
     border-radius: 6px;
   }
 }
