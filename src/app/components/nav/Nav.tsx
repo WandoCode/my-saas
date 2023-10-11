@@ -1,6 +1,9 @@
+import Image from 'next/image'
 import { NavItem } from '.'
+import clsx from 'clsx'
 
 interface PropsNav {
+  baseClassName?: string
   className?: string
 }
 
@@ -40,16 +43,24 @@ const navLinks = [
   },
 ]
 
-function Nav({ className = 'nav' }: PropsNav) {
+function Nav({ baseClassName = 'nav', className }: PropsNav) {
   return (
-    <nav className={className}>
-      <ul className={`${className}__list align`}>
+    <nav className={clsx(baseClassName, className)}>
+      <button className="button button--transparent only-mobile">
+        <Image
+          src="/burger.svg"
+          width={25}
+          height={25}
+          alt="burger menu icon"
+        />
+      </button>
+      <ul className={`${baseClassName}__list align`}>
         {navLinks.map((link) => (
           <NavItem
             key={link.name}
             href={link.href}
             subItems={link.subItems}
-            className={className}
+            baseClassName={baseClassName}
           >
             {link.name}
           </NavItem>

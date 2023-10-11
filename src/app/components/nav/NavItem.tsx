@@ -5,22 +5,22 @@ import { PropsWithChildren } from 'react'
 interface PropsNavItem extends PropsWithChildren {
   href: string
   subItems?: { name: string; href: string }[]
-  className?: string
+  baseClassName?: string
 }
 
 function NavItem({
   href,
   subItems,
-  className = 'nav',
+  baseClassName = 'nav',
   children,
 }: PropsNavItem) {
   return (
-    <li className={`${className}__item align`}>
+    <li className={`${baseClassName}__item align`}>
       <Link href={href}>{children}</Link>
 
       {subItems && (
         <Image
-          className={`${className}__expand-img`}
+          className={`${baseClassName}__expand-img`}
           src="/expand.svg"
           height={16}
           width={20}
@@ -29,9 +29,9 @@ function NavItem({
       )}
 
       {subItems && (
-        <ul className={`${className}__submenu`}>
+        <ul className={`${baseClassName}__submenu`}>
           {subItems.map((subItem) => (
-            <li key={subItem.name} className={`${className}__subitem`}>
+            <li key={subItem.name} className={`${baseClassName}__subitem`}>
               <Link href={subItem.href}>{subItem.name}</Link>
             </li>
           ))}
