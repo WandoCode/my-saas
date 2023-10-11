@@ -824,8 +824,11 @@ body {
   padding-left: 3rem;
   border-bottom: 1px solid var(--clr-default-850);
 }
-.nav-mobile__item.submenu-open .nav-mobile__subitem {
-  display: flex;
+.nav-mobile__item.submenu-open .nav-mobile__submenu {
+  display: block;
+}
+.nav-mobile__item.submenu-open .nav-mobile__expand-img {
+  transform: rotate(180deg);
 }
 .nav-mobile__expand-img {
   filter: brightness(0) saturate(100%) invert(19%) sepia(7%) saturate(5986%) hue-rotate(185deg) brightness(94%) contrast(92%);
@@ -839,9 +842,13 @@ body {
   padding: 1rem 2rem 1rem 0;
   color: var(--clr-default-250);
 }
-.nav-mobile__subitem {
+.nav-mobile__submenu {
   display: none;
+  padding-bottom: 1.5rem;
+}
+.nav-mobile__subitem {
   padding-left: 1rem;
+  padding-block: 0.75rem;
 }
 .nav-mobile.menu-open .nav-mobile__list {
   display: flex;
