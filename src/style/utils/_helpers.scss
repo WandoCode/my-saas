@@ -33,3 +33,16 @@
   position: absolute;
   width: 1px;
 }
+
+.only-desktop {
+  display: none;
+  @include breakpoint('large') {
+    display: block;
+  }
+}
+
+.only-mobile {
+  @include breakpoint('large') {
+    display: none;
+  }
+}

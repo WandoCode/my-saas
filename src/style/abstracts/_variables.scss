@@ -1,5 +1,8 @@
-$header-height-sm: 40px;
+@use './mixins' as *;
+
+$header-height-sm: 80px;
 $header-height-lg: 120px;
+$header-height-sm--scroll: 50px;
 $header-height-lg--scroll: 80px;
 
 $clr-default-250-svg: brightness(0) saturate(100%) invert(19%) sepia(7%)

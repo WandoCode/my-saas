@@ -16,17 +16,31 @@ function NavItem({
 }: PropsNavItem) {
   return (
     <li className={`${baseClassName}__item align`}>
-      <Link href={href}>{children}</Link>
+      <Link href={href} className="only-desktop align">
+        {children}
+        {subItems && (
+          <Image
+            className={`${baseClassName}__expand-img`}
+            src="/expand.svg"
+            height={16}
+            width={20}
+            alt=" "
+          />
+        )}
+      </Link>
 
-      {subItems && (
-        <Image
-          className={`${baseClassName}__expand-img`}
-          src="/expand.svg"
-          height={16}
-          width={20}
-          alt=" "
-        />
-      )}
+      <button className={`${baseClassName}__item-button only-mobile align `}>
+        {children}
+        {subItems && (
+          <Image
+            className={`${baseClassName}__expand-img`}
+            src="/expand.svg"
+            height={16}
+            width={20}
+            alt=" "
+          />
+        )}
+      </button>
 
       {subItems && (
         <ul className={`${baseClassName}__submenu`}>

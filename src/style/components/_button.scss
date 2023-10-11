@@ -78,4 +78,12 @@
       background-color: var(--clr-negative-850);
     }
   }
+
+  &--transparent {
+    background-color: transparent;
+
+    & img {
+      filter: $clr-default-250-svg;
+    }
+  }
 }

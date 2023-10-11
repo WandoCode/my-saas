@@ -11,6 +11,8 @@ html {
 }
 
 main {
+  padding-top: $header-height-sm;
+
   @include breakpoint('large') {
     padding-top: $header-height-lg;
   }
@@ -23,4 +25,8 @@ a {
   @include on-event {
     text-decoration: none;
   }
+}
+
+button {
+  border: none;
 }

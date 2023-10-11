@@ -5,16 +5,8 @@
 $spacing: 0.75rem;
 
 .nav-desktop {
-  --display-mobile: flex;
-
-  @include breakpoint-down('large') {
-    --display-mobile: none;
-  }
-
   &__item {
-    display: var(--display-mobile);
     position: relative;
-    gap: 3px;
 
     padding: $spacing;
 
@@ -38,6 +30,11 @@ $spacing: 0.75rem;
       & .nav-desktop__submenu {
         display: grid;
       }
+    }
+
+    & a {
+      display: flex;
+      gap: 3px;
     }
   }
 
