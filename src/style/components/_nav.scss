@@ -4,10 +4,16 @@
 
 $spacing: 0.75rem;
 
-.nav {
-  &__item {
-    position: relative;
+.nav-desktop {
+  --display-mobile: flex;
 
+  @include breakpoint-down('large') {
+    --display-mobile: none;
+  }
+
+  &__item {
+    display: var(--display-mobile);
+    position: relative;
     gap: 3px;
 
     padding: $spacing;
@@ -23,13 +29,13 @@ $spacing: 0.75rem;
         color: var(--clr-primary-400);
       }
 
-      & .nav__expand-img {
+      & .nav-desktop__expand-img {
         transform: rotate(180deg);
 
         filter: $clr-primary-400-svg;
       }
 
-      & .nav__submenu {
+      & .nav-desktop__submenu {
         display: grid;
       }
     }

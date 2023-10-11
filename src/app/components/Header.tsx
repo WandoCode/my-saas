@@ -30,7 +30,7 @@ function Header() {
           alt="Logo Fleximed"
         />
       </div>
-      <Nav></Nav>
+      <Nav className="nav-desktop" />
       <div className="header__empty-container"></div>
     </header>
   )

@@ -1,5 +1,9 @@
 import { NavItem } from '.'
 
+interface PropsNav {
+  className?: string
+}
+
 const navLinks = [
   {
     name: 'Workers',
@@ -36,12 +40,17 @@ const navLinks = [
   },
 ]
 
-function Nav() {
+function Nav({ className = 'nav' }: PropsNav) {
   return (
-    <nav className="nav">
-      <ul className="nav__list align">
+    <nav className={className}>
+      <ul className={`${className}__list align`}>
         {navLinks.map((link) => (
-          <NavItem key={link.name} href={link.href} subItems={link.subItems}>
+          <NavItem
+            key={link.name}
+            href={link.href}
+            subItems={link.subItems}
+            className={className}
+          >
             {link.name}
           </NavItem>
         ))}
