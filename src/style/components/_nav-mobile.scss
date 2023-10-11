@@ -2,6 +2,8 @@
 
 .nav-mobile {
   &__list {
+    display: none;
+
     position: absolute;
     left: 0;
     right: 0;
@@ -31,6 +33,10 @@
 
     padding-left: 3rem;
     border-bottom: 1px solid var(--clr-default-850);
+
+    &.submenu-open .nav-mobile__subitem {
+      display: flex;
+    }
   }
 
   &__expand-img {
@@ -50,5 +56,9 @@
   &__subitem {
     display: none;
     padding-left: 1rem;
+  }
+
+  &.menu-open &__list {
+    display: flex;
   }
 }

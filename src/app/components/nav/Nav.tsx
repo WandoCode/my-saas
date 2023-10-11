@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import { NavItem } from '.'
 import clsx from 'clsx'
+import { useState } from 'react'
 
 interface PropsNav {
   baseClassName?: string
@@ -44,9 +47,31 @@ const navLinks = [
 ]
 
 function Nav({ baseClassName = 'nav', className }: PropsNav) {
+  const [menuIsOpen, setMenuIsOpen] = useState<boolean>(false)
+  const [submenuOpen, setSubmenuOpen] = useState<number | null>(null)
+
+  const toggleMenu = () => {
+    setMenuIsOpen((isOpen) => {
+      if (!isOpen) closeAllSubmenus()
+      return !isOpen
+    })
+  }
+
+  const onToggleSubmenu = (i: number) => {
+    if (i === submenuOpen) closeAllSubmenus()
+    else setSubmenuOpen(i)
+  }
+
+  const closeAllSubmenus = () => setSubmenuOpen(null)
+
   return (
-    <nav className={clsx(baseClassName, className)}>
-      <button className="button button--transparent only-mobile">
+    <nav
+      className={clsx(baseClassName, className, { 'menu-open': menuIsOpen })}
+    >
+      <button
+        className="button button--transparent only-mobile"
+        onClick={toggleMenu}
+      >
         <Image
           src="/burger.svg"
           width={25}
@@ -55,12 +80,14 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
         />
       </button>
       <ul className={`${baseClassName}__list align`}>
-        {navLinks.map((link) => (
+        {navLinks.map((link, i) => (
           <NavItem
             key={link.name}
             href={link.href}
             subItems={link.subItems}
             baseClassName={baseClassName}
+            submenuIsOpen={submenuOpen === i}
+            toggleSubmenu={() => onToggleSubmenu(i)}
           >
             {link.name}
           </NavItem>

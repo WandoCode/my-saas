@@ -1,21 +1,30 @@
+import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import { PropsWithChildren } from 'react'
+import { PropsWithChildren, useState } from 'react'
 
 interface PropsNavItem extends PropsWithChildren {
   href: string
+  submenuIsOpen: boolean
   subItems?: { name: string; href: string }[]
   baseClassName?: string
+  toggleSubmenu: () => void
 }
 
 function NavItem({
   href,
   subItems,
   baseClassName = 'nav',
+  submenuIsOpen = false,
+  toggleSubmenu,
   children,
 }: PropsNavItem) {
   return (
-    <li className={`${baseClassName}__item align`}>
+    <li
+      className={clsx(`${baseClassName}__item align`, {
+        'submenu-open': submenuIsOpen,
+      })}
+    >
       <Link href={href} className="only-desktop align">
         {children}
         {subItems && (
@@ -25,11 +34,15 @@ function NavItem({
             height={16}
             width={20}
             alt=" "
+            aria-hidden={true}
           />
         )}
       </Link>
 
-      <button className={`${baseClassName}__item-button only-mobile align `}>
+      <button
+        className={`${baseClassName}__item-button only-mobile align`}
+        onClick={toggleSubmenu}
+      >
         {children}
         {subItems && (
           <Image
@@ -38,6 +51,7 @@ function NavItem({
             height={16}
             width={20}
             alt=" "
+            aria-hidden={true}
           />
         )}
       </button>

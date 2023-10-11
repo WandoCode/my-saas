@@ -800,6 +800,7 @@ body {
 }
 
 .nav-mobile__list {
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
@@ -823,6 +824,9 @@ body {
   padding-left: 3rem;
   border-bottom: 1px solid var(--clr-default-850);
 }
+.nav-mobile__item.submenu-open .nav-mobile__subitem {
+  display: flex;
+}
 .nav-mobile__expand-img {
   filter: brightness(0) saturate(100%) invert(19%) sepia(7%) saturate(5986%) hue-rotate(185deg) brightness(94%) contrast(92%);
   height: 23px;
@@ -838,4 +842,7 @@ body {
 .nav-mobile__subitem {
   display: none;
   padding-left: 1rem;
+}
+.nav-mobile.menu-open .nav-mobile__list {
+  display: flex;
 }/*# sourceMappingURL=main.css.map */
