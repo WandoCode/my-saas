@@ -42,6 +42,9 @@ function NavItem({
       <button
         className={`${baseClassName}__item-button only-mobile align`}
         onClick={toggleSubmenu}
+        id={children?.toLocaleString().toLowerCase() + '-button'}
+        aria-controls={children?.toLocaleString().toLowerCase() + '-menu'}
+        aria-expanded={submenuIsOpen}
       >
         {children}
         {subItems && (
@@ -57,7 +60,11 @@ function NavItem({
       </button>
 
       {subItems && (
-        <ul className={`${baseClassName}__submenu`}>
+        <ul
+          className={`${baseClassName}__submenu`}
+          id={children?.toLocaleString().toLowerCase() + '-menu'}
+          aria-labelledby={children?.toLocaleString().toLowerCase() + '-menu'}
+        >
           {subItems.map((subItem) => (
             <li key={subItem.name} className={`${baseClassName}__subitem`}>
               <Link href={subItem.href}>{subItem.name}</Link>

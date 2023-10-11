@@ -52,9 +52,20 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
 
   const toggleMenu = () => {
     setMenuIsOpen((isOpen) => {
-      if (!isOpen) closeAllSubmenus()
+      if (!isOpen) {
+        closeAllSubmenus()
+        desactiveScroll()
+      } else activeScroll()
       return !isOpen
     })
+  }
+
+  const activeScroll = () => {
+    document.body.classList.remove('no-scroll-mobile')
+  }
+
+  const desactiveScroll = () => {
+    document.body.classList.add('no-scroll-mobile')
   }
 
   const onToggleSubmenu = (i: number) => {
@@ -67,10 +78,14 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
   return (
     <nav
       className={clsx(baseClassName, className, { 'menu-open': menuIsOpen })}
+      aria-label="Main menu"
     >
       <button
         className="button button--transparent only-mobile"
         onClick={toggleMenu}
+        aria-label={menuIsOpen ? 'Close main menu' : 'Open main menu'}
+        aria-expanded={menuIsOpen}
+        aria-haspopup="menu"
       >
         <Image
           src="/burger.svg"
@@ -78,6 +93,9 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
           height={25}
           alt="burger menu icon"
         />
+        <span className="visually-hidden">
+          {menuIsOpen ? 'Close main menu' : 'Open main menu'}
+        </span>
       </button>
       <ul className={`${baseClassName}__list align`}>
         {navLinks.map((link, i) => (

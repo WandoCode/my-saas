@@ -36,6 +36,7 @@
 
 .only-desktop {
   display: none;
+
   @include breakpoint('large') {
     display: block;
   }
@@ -44,5 +45,12 @@
 .only-mobile {
   @include breakpoint('large') {
     display: none;
+  }
+}
+
+.no-scroll-mobile {
+  overflow: hidden;
+  @include breakpoint('large') {
+    overflow: auto;
   }
 }

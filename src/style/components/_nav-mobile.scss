@@ -26,12 +26,12 @@
 
   &__item {
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
-    gap: 0.5rem;
+
     width: 100%;
 
     padding-left: 3rem;
+
     border-bottom: 1px solid var(--clr-default-850);
 
     &.submenu-open {
@@ -52,20 +52,25 @@
   }
 
   &__item-button {
-    width: 100%;
     justify-content: space-between;
-    background-color: transparent;
+
+    width: 100%;
+
     padding: 1rem 2rem 1rem 0;
+
     color: var(--clr-default-250);
+    background-color: transparent;
   }
 
   &__submenu {
     display: none;
+
     padding-bottom: 1.5rem;
   }
 
   &__subitem {
     padding-left: 1rem;
+
     padding-block: 0.75rem;
   }
 
