@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { NavItem } from '.'
 import clsx from 'clsx'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { navLinks } from '@/app/config'
 import { activeScroll, desactiveScroll } from '@/app/utils'
 
@@ -13,14 +13,23 @@ interface PropsNav {
 }
 
 function Nav({ baseClassName = 'nav', className }: PropsNav) {
+  const navRef = useRef<HTMLElement>(null)
   const [mobileMenuIsOpen, setMobileMenuIsOpen] = useState<boolean>(false)
   const [submenuOpen, setSubmenuOpen] = useState<number | null>(null)
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyboard)
-
-    return () => document.removeEventListener('keydown', handleKeyboard)
+    document.addEventListener('click', handleClick)
+    return () => {
+      document.removeEventListener('keydown', handleKeyboard)
+      document.removeEventListener('click', handleClick)
+    }
   }, [])
+
+  const handleClick = (e: MouseEvent) => {
+    const target = e.target as Node
+    if (!navRef.current?.contains(target)) closeSubmenus()
+  }
 
   const handleKeyboard = (e: KeyboardEvent) => {
     const keyDown = e.key
@@ -48,6 +57,7 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
 
   return (
     <nav
+      ref={navRef}
       className={clsx(baseClassName, className, {
         'menu-open': mobileMenuIsOpen,
       })}
