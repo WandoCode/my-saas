@@ -25,11 +25,7 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
   const handleKeyboard = (e: KeyboardEvent) => {
     const keyDown = e.key
 
-    if (keyDown === 'Escape') {
-      // console.log('escape')
-      closeAllSubmenus()
-    }
-    // BUG: quand keyDown === 'Escape', trigger closeAllSubmenus mais ne ferme pas le menu
+    if (keyDown === 'Escape') closeAllSubmenus()
   }
 
   const toggleMenu = () => {
@@ -47,10 +43,6 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
     if (i === submenuOpen) closeAllSubmenus()
     else setSubmenuOpen(i)
   }
-
-  useEffect(() => {
-    // console.log(submenuOpen)
-  }, [submenuOpen])
 
   const closeAllSubmenus = () => setSubmenuOpen(null)
 

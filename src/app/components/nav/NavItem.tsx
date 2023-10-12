@@ -1,9 +1,10 @@
 'use client'
+
 import { reactNodeToString } from '@/app/utils'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FocusEvent, PropsWithChildren, useMemo, useRef, useState } from 'react'
+import React, { FocusEvent, PropsWithChildren, useRef } from 'react'
 
 interface PropsNavItem extends PropsWithChildren {
   href: string
@@ -21,15 +22,15 @@ function NavItem({
   toggleSubmenu,
   children,
 }: PropsNavItem) {
-  const itemRef = useRef<HTMLLIElement>(null)
-  const [focused, setFocused] = useState<boolean>(false)
+  const submenuRef = useRef<HTMLUListElement>(null)
 
-  const showSubmenu = () => setFocused(true)
+  const showSubmenu = () => {
+    if (!submenuIsOpen) toggleSubmenu()
+  }
 
   const handleBlur = (e: FocusEvent) => {
     const nextTarget = e.relatedTarget
-
-    if (!itemRef.current?.contains(nextTarget)) setFocused(false)
+    if (!submenuRef.current?.contains(nextTarget)) toggleSubmenu()
   }
 
   const expandIcon = (
@@ -46,17 +47,14 @@ function NavItem({
       )}
     </>
   )
+
   return (
     <li
-      ref={itemRef}
       className={clsx(`${baseClassName}__item align`, {
         'submenu-open': submenuIsOpen,
-        'menu-focused': focused,
       })}
-      onFocus={showSubmenu}
-      onBlur={handleBlur}
     >
-      <Link href={href} className="only-desktop align" tabIndex={0}>
+      <Link href={href} className="only-desktop align" onFocus={showSubmenu}>
         {children}
         {expandIcon}
       </Link>
@@ -74,13 +72,16 @@ function NavItem({
 
       {subItems && (
         <ul
+          ref={submenuRef}
           className={`${baseClassName}__submenu`}
           id={reactNodeToString(children) + '-menu'}
           aria-labelledby={reactNodeToString(children) + '-menu'}
         >
           {subItems.map((subItem) => (
             <li key={subItem.name} className={`${baseClassName}__subitem`}>
-              <Link href={subItem.href}>{subItem.name}</Link>
+              <Link onBlur={handleBlur} href={subItem.href}>
+                {subItem.name}
+              </Link>
             </li>
           ))}
         </ul>

@@ -770,14 +770,14 @@ body {
   font-weight: 500;
   cursor: pointer;
 }
-.nav-desktop__item:hover > a, .nav-desktop__item.menu-focused > a {
+.nav-desktop__item:hover > a, .nav-desktop__item.submenu-open > a {
   color: var(--clr-primary-400);
 }
-.nav-desktop__item:hover .nav-desktop__expand-img, .nav-desktop__item.menu-focused .nav-desktop__expand-img {
+.nav-desktop__item:hover .nav-desktop__expand-img, .nav-desktop__item.submenu-open .nav-desktop__expand-img {
   transform: rotate(180deg);
   filter: brightness(0) saturate(100%) invert(14%) sepia(94%) saturate(3241%) hue-rotate(228deg) brightness(98%) contrast(113%);
 }
-.nav-desktop__item:hover .nav-desktop__submenu, .nav-desktop__item.menu-focused .nav-desktop__submenu {
+.nav-desktop__item:hover .nav-desktop__submenu, .nav-desktop__item.submenu-open .nav-desktop__submenu {
   display: grid;
 }
 .nav-desktop__item a {

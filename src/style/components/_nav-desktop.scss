@@ -17,7 +17,7 @@ $spacing: 0.75rem;
     cursor: pointer;
 
     &:hover,
-    &.menu-focused {
+    &.submenu-open {
       & > a {
         color: var(--clr-primary-400);
       }
