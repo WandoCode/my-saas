@@ -1,14 +1,9 @@
 'use client'
+import { reactNodeToString } from '@/app/utils'
 import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, {
-  PropsWithChildren,
-  ReactElement,
-  ReactNode,
-  useRef,
-  useState,
-} from 'react'
+import { FocusEvent, PropsWithChildren, useMemo, useRef, useState } from 'react'
 
 interface PropsNavItem extends PropsWithChildren {
   href: string
@@ -31,12 +26,26 @@ function NavItem({
 
   const showSubmenu = () => setFocused(true)
 
-  const handleBlur = (e: React.FocusEvent) => {
+  const handleBlur = (e: FocusEvent) => {
     const nextTarget = e.relatedTarget
 
     if (!itemRef.current?.contains(nextTarget)) setFocused(false)
   }
 
+  const expandIcon = (
+    <>
+      {subItems && (
+        <Image
+          className={`${baseClassName}__expand-img`}
+          src="/expand.svg"
+          height={16}
+          width={20}
+          alt=" "
+          aria-hidden={true}
+        />
+      )}
+    </>
+  )
   return (
     <li
       ref={itemRef}
@@ -49,44 +58,25 @@ function NavItem({
     >
       <Link href={href} className="only-desktop align" tabIndex={0}>
         {children}
-
-        {subItems && (
-          <Image
-            className={`${baseClassName}__expand-img`}
-            src="/expand.svg"
-            height={16}
-            width={20}
-            alt=" "
-            aria-hidden={true}
-          />
-        )}
+        {expandIcon}
       </Link>
 
       <button
         className={`${baseClassName}__item-button only-mobile align`}
         onClick={toggleSubmenu}
-        id={children?.toLocaleString().toLowerCase() + '-button'}
-        aria-controls={children?.toLocaleString().toLowerCase() + '-menu'}
+        id={reactNodeToString(children) + '-button'}
+        aria-controls={reactNodeToString(children) + '-menu'}
         aria-expanded={submenuIsOpen}
       >
         {children}
-        {subItems && (
-          <Image
-            className={`${baseClassName}__expand-img`}
-            src="/expand.svg"
-            height={16}
-            width={20}
-            alt=" "
-            aria-hidden={true}
-          />
-        )}
+        {expandIcon}
       </button>
 
       {subItems && (
         <ul
           className={`${baseClassName}__submenu`}
-          id={children?.toLocaleString().toLowerCase() + '-menu'}
-          aria-labelledby={children?.toLocaleString().toLowerCase() + '-menu'}
+          id={reactNodeToString(children) + '-menu'}
+          aria-labelledby={reactNodeToString(children) + '-menu'}
         >
           {subItems.map((subItem) => (
             <li key={subItem.name} className={`${baseClassName}__subitem`}>
