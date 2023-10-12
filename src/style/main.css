@@ -845,7 +845,7 @@ body {
     height: 23px;
     width: auto;
   }
-  .nav__item-button {
+  .nav__item-button, .nav a {
     justify-content: space-between;
     width: 100%;
     padding: 1rem 2rem 1rem 0;

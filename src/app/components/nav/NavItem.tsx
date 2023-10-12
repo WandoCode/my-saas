@@ -48,21 +48,27 @@ function NavItem({
         'submenu-open': submenuIsOpen,
       })}
     >
-      <Link href={href} className="only-desktop align" onFocus={showSubmenu}>
+      <Link
+        href={href}
+        className={clsx('align', { 'only-desktop': subItems })}
+        onFocus={showSubmenu}
+      >
         {children}
         {expandIcon}
       </Link>
 
-      <button
-        className={`${baseClassName}__item-button only-mobile align`}
-        onClick={toggleSubmenu}
-        id={reactNodeToString(children) + '-button'}
-        aria-controls={reactNodeToString(children) + '-menu'}
-        aria-expanded={submenuIsOpen}
-      >
-        {children}
-        {expandIcon}
-      </button>
+      {subItems && (
+        <button
+          className={`${baseClassName}__item-button only-mobile align`}
+          onClick={toggleSubmenu}
+          id={reactNodeToString(children) + '-button'}
+          aria-controls={reactNodeToString(children) + '-menu'}
+          aria-expanded={submenuIsOpen}
+        >
+          {children}
+          {expandIcon}
+        </button>
+      )}
 
       {subItems && (
         <Submenu

@@ -32,6 +32,7 @@ const navLinks = [
       { name: 'Hospitals', href: '#' },
     ],
   },
+  { name: 'Pricing', href: './pricing' },
 ]
 
 export { navLinks }
