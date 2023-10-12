@@ -25,13 +25,13 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
   const handleKeyboard = (e: KeyboardEvent) => {
     const keyDown = e.key
 
-    if (keyDown === 'Escape') closeAllSubmenus()
+    if (keyDown === 'Escape') closeSubmenus()
   }
 
   const toggleMenu = () => {
     setMobileMenuIsOpen((isOpen) => {
       if (!isOpen) {
-        closeAllSubmenus()
+        closeSubmenus()
         desactiveScroll()
       } else activeScroll()
 
@@ -40,11 +40,11 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
   }
 
   const onToggleSubmenu = (i: number) => {
-    if (i === submenuOpen) closeAllSubmenus()
+    if (i === submenuOpen) closeSubmenus()
     else setSubmenuOpen(i)
   }
 
-  const closeAllSubmenus = () => setSubmenuOpen(null)
+  const closeSubmenus = () => setSubmenuOpen(null)
 
   return (
     <nav
@@ -81,6 +81,7 @@ function Nav({ baseClassName = 'nav', className }: PropsNav) {
             baseClassName={baseClassName}
             submenuIsOpen={submenuOpen === i}
             toggleSubmenu={() => onToggleSubmenu(i)}
+            closeSubmenus={closeSubmenus}
           >
             {link.name}
           </NavItem>
