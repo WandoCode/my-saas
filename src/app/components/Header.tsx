@@ -33,8 +33,7 @@ function Header() {
           />
         </Link>
       </div>
-      <Nav baseClassName="nav-desktop" className="only-desktop" />
-      <Nav baseClassName="nav-mobile" className="only-mobile" />
+      <Nav />
 
       <div className="header__empty-container only-desktop"></div>
     </header>

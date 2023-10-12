@@ -1,80 +1,82 @@
 @use '../abstracts/' as *;
 
-.nav-mobile {
-  &__list {
-    display: none;
+.nav {
+  @include breakpoint-down('large') {
+    &__list {
+      display: none;
 
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 100%;
 
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
 
-    height: calc(100dvh - $header-height-sm);
+      height: calc(100dvh - $header-height-sm);
 
-    padding-top: 1rem;
+      padding-top: 1rem;
 
-    background-color: var(--clr-default-970);
+      background-color: var(--clr-default-970);
 
-    .header--scroll & {
-      height: calc(100dvh - $header-height-sm--scroll);
-    }
-  }
-
-  &__item {
-    flex-direction: column;
-    align-items: flex-start;
-
-    width: 100%;
-
-    padding-left: 3rem;
-
-    border-bottom: 1px solid var(--clr-default-850);
-
-    &.submenu-open {
-      & .nav-mobile__submenu {
-        display: block;
-      }
-
-      & .nav-mobile__expand-img {
-        transform: rotate(180deg);
+      .header--scroll & {
+        height: calc(100dvh - $header-height-sm--scroll);
       }
     }
-  }
 
-  &__expand-img {
-    filter: $clr-default-250-svg;
-    height: 23px;
-    width: auto;
-  }
+    &__item {
+      flex-direction: column;
+      align-items: flex-start;
 
-  &__item-button {
-    justify-content: space-between;
+      width: 100%;
 
-    width: 100%;
+      padding-left: 3rem;
 
-    padding: 1rem 2rem 1rem 0;
+      border-bottom: 1px solid var(--clr-default-850);
 
-    color: var(--clr-default-250);
-    background-color: transparent;
-  }
+      &.submenu-open {
+        & .nav__submenu {
+          display: block;
+        }
 
-  &__submenu {
-    display: none;
+        & .nav__expand-img {
+          transform: rotate(180deg);
+        }
+      }
+    }
 
-    padding-bottom: 1.5rem;
-  }
+    &__expand-img {
+      filter: $clr-default-250-svg;
+      height: 23px;
+      width: auto;
+    }
 
-  &__subitem {
-    padding-left: 1rem;
+    &__item-button {
+      justify-content: space-between;
 
-    padding-block: 0.75rem;
-  }
+      width: 100%;
 
-  &.menu-open &__list {
-    display: flex;
+      padding: 1rem 2rem 1rem 0;
+
+      color: var(--clr-default-250);
+      background-color: transparent;
+    }
+
+    &__submenu {
+      display: none;
+
+      padding-bottom: 1.5rem;
+    }
+
+    &__subitem {
+      padding-left: 1rem;
+
+      padding-block: 0.75rem;
+    }
+
+    &.menu-open &__list {
+      display: flex;
+    }
   }
 }
