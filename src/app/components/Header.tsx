@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Nav } from '.'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 function Header() {
   const [isTop, setIsTop] = useState<boolean>(true)
@@ -22,13 +23,15 @@ function Header() {
   return (
     <header className={clsx('header', { 'header--scroll': !isTop })}>
       <div className="header__logo-container">
-        <Image
-          className="header__logo"
-          src="/Logo.svg"
-          height={403}
-          width={1537}
-          alt="Logo Fleximed"
-        />
+        <Link href="#">
+          <Image
+            className="header__logo"
+            src="/Logo.svg"
+            height={403}
+            width={1537}
+            alt="Logo Fleximed"
+          />
+        </Link>
       </div>
       <Nav baseClassName="nav-desktop" className="only-desktop" />
       <Nav baseClassName="nav-mobile" className="only-mobile" />
