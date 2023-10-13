@@ -1,9 +1,11 @@
 import clsx from 'clsx'
 import { Herr_Von_Muellerhoff } from 'next/font/google'
 import Link from 'next/link'
-import { PropsWithChildren } from 'react'
+import { ComponentProps, PropsWithChildren } from 'react'
 
-interface ButtonProps extends PropsWithChildren {
+type ButtonAndAnchorProps = ComponentProps<'button'> & ComponentProps<'a'>
+
+interface ButtonProps extends ButtonAndAnchorProps {
   as?: 'a' | 'button' | 'next-link'
   className?: string
   href?: string
@@ -19,10 +21,11 @@ function Button({
   as: ButtonComponent = 'button',
   className,
   disabled = false,
+  href,
   variant = 'primary',
   ...props
 }: ButtonProps) {
-  if (props.href && ButtonComponent == 'button') ButtonComponent = 'a'
+  if (href && ButtonComponent === 'button') ButtonComponent = 'a'
 
   const combinedClassName = clsx(
     className,
@@ -46,7 +49,7 @@ function Button({
 
   if (ButtonComponent === 'next-link') {
     return (
-      <Link href={props.href || ''} className={combinedClassName}>
+      <Link href={href || ''} className={combinedClassName}>
         {props.children}
       </Link>
     )
