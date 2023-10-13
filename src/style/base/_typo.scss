@@ -18,6 +18,14 @@ body {
   @include breakpoint('large') {
     font-size: 72px;
   }
+
+  &--small {
+    font-size: 28px;
+
+    @include breakpoint('large') {
+      font-size: 64px;
+    }
+  }
 }
 
 .subtitle {

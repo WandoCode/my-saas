@@ -526,6 +526,14 @@ body {
     font-size: 72px;
   }
 }
+.h1--small {
+  font-size: 28px;
+}
+@media (min-width: 64rem) {
+  .h1--small {
+    font-size: 64px;
+  }
+}
 
 .subtitle {
   font-size: 16px;
@@ -619,11 +627,11 @@ body {
     height: 80px;
   }
 }
-.header__logo-container, .header__empty-container {
+.header__side-container {
   margin-left: 1.5rem;
 }
 @media (min-width: 64rem) {
-  .header__logo-container, .header__empty-container {
+  .header__side-container {
     width: 250px;
     margin-left: 3rem;
   }
@@ -691,6 +699,10 @@ body {
 .hero-image img {
   height: auto;
   border-radius: 6px;
+}
+
+.prices {
+  margin-top: 60px;
 }
 
 .button {
