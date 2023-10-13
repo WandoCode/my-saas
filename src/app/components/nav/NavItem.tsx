@@ -41,12 +41,15 @@ function NavItem({
       )}
     </>
   )
-
+  const handleMouseOut = () => {
+    if (submenuIsOpen) closeSubmenus()
+  }
   return (
     <li
       className={clsx(`${baseClassName}__item align`, {
         'submenu-open': submenuIsOpen,
       })}
+      onMouseOut={handleMouseOut}
     >
       <Link
         href={href}
