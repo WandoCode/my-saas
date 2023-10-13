@@ -5,6 +5,14 @@ body {
   font-size: 16px;
 }
 
+p {
+  text-align: center;
+
+  @include breakpoint('large') {
+    text-align: left;
+  }
+}
+
 .heading {
   color: var(--clr-default-250);
   font-family: $font-secondary;
@@ -23,7 +31,7 @@ body {
     font-size: 28px;
 
     @include breakpoint('large') {
-      font-size: 64px;
+      font-size: 36px;
     }
   }
 }
