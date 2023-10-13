@@ -10,7 +10,6 @@ const linksTo = {
   faq: '/faq',
   aboutUs: '/about',
   app: '/app',
-  appDownload: '/app/download',
 }
 
 export { linksTo }

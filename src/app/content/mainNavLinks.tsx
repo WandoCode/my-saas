@@ -3,7 +3,7 @@ import { linksTo } from './links'
 const navLinks = [
   {
     name: 'Healthcare Facilities',
-    href: '#',
+    href: linksTo.facilitiesHomepage,
     subItems: [
       { name: 'Hospitals', href: linksTo.facilitiesHospitals },
       { name: 'Small structures', href: linksTo.facilitiesSmallStructures },
@@ -22,10 +22,7 @@ const navLinks = [
   {
     name: 'The App',
     href: linksTo.app,
-    subItems: [
-      { name: 'Download', href: linksTo.appDownload },
-      { name: 'Discover', href: '#' },
-    ],
+    subItems: [{ name: 'Discover', href: '#' }],
   },
   {
     name: 'FAQ',
