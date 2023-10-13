@@ -6,6 +6,7 @@ const linksTo = {
   freelancerHomepage: '/freelancer',
   freelancerAdvantages: '/freelancer/advantages',
   freelancerWorkWithUs: '/freelancer/work-with-us',
+  freelancerTestimonies: '/freelancer/testimonies',
   faq: '/faq',
   aboutUs: '/about',
   app: '/app',

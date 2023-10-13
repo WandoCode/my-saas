@@ -16,6 +16,7 @@ const navLinks = [
     subItems: [
       { name: 'Advantage', href: linksTo.freelancerAdvantages },
       { name: 'Work with us', href: linksTo.freelancerWorkWithUs },
+      { name: 'Testimonies', href: linksTo.freelancerTestimonies },
     ],
   },
   {
