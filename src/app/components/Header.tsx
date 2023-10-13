@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
-import { Nav } from '.'
+import { Button, Nav } from '.'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
+import { linksTo } from '../content'
 
 function Header() {
   const [isTop, setIsTop] = useState<boolean>(true)
@@ -22,8 +23,8 @@ function Header() {
 
   return (
     <header className={clsx('header', { 'header--scroll': !isTop })}>
-      <div className="header__logo-container">
-        <Link href="#">
+      <div className="header__side-container">
+        <Link href={linksTo.facilitiesHomepage}>
           <Image
             className="header__logo"
             src="/Logo.svg"
@@ -33,9 +34,14 @@ function Header() {
           />
         </Link>
       </div>
+
       <Nav />
 
-      <div className="header__empty-container only-desktop"></div>
+      <div className="header__side-container only-desktop">
+        <Button variant="primary" href={linksTo.freelancerHomepage}>
+          Freelancers
+        </Button>
+      </div>
     </header>
   )
 }

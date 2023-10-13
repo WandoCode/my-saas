@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Button } from './components'
+import { linksTo } from './content'
 
 export default function Home() {
   return (
@@ -16,11 +17,15 @@ export default function Home() {
               The effortless way to find the worker who fit your current need
             </h2>
             <div className="align hero__ctas">
-              <Button as="next-link" variant="primary" className="hero__btn-a">
+              <Button
+                href={linksTo.facilitiesHospitals}
+                variant="primary"
+                className="hero__btn-a"
+              >
                 Discover
               </Button>
               <Button
-                as="next-link"
+                href={linksTo.facilitiesScheduleDemo}
                 variant="secondary"
                 className="hero__btn-a"
               >

@@ -1,37 +1,40 @@
+import { linksTo } from './links'
+
 const navLinks = [
   {
-    name: 'Workers',
+    name: 'Healthcare Facilities',
     href: '#',
     subItems: [
-      { name: 'Submenu 1', href: '#' },
-      { name: 'Submenu 2', href: '#' },
+      { name: 'Hospitals', href: linksTo.facilitiesHospitals },
+      { name: 'Small structures', href: linksTo.facilitiesSmallStructures },
+      { name: 'Schedule a demo', href: linksTo.facilitiesScheduleDemo },
     ],
   },
   {
-    name: 'Hospitals',
-    href: '#',
+    name: 'Freelancers',
+    href: linksTo.freelancerHomepage,
     subItems: [
-      { name: 'Our solution', href: '#' },
-      { name: 'Submenu 2', href: '#' },
+      { name: 'Advantage', href: linksTo.freelancerAdvantages },
+      { name: 'Work with us', href: linksTo.freelancerWorkWithUs },
     ],
   },
   {
     name: 'The App',
-    href: '#',
+    href: linksTo.app,
     subItems: [
-      { name: 'Download', href: '#' },
+      { name: 'Download', href: linksTo.appDownload },
       { name: 'Discover', href: '#' },
     ],
   },
-  { name: 'About us', href: '#' },
   {
     name: 'FAQ',
-    href: '#',
+    href: linksTo.faq,
     subItems: [
-      { name: 'Workers', href: '#' },
-      { name: 'Hospitals', href: '#' },
+      { name: 'Freelancers', href: '#' },
+      { name: 'Healthcare Facilities', href: '#' },
     ],
   },
+  { name: 'About us', href: linksTo.aboutUs },
 ]
 
 export { navLinks }
