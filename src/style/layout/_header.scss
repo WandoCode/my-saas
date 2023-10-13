@@ -28,8 +28,7 @@ $side-width-lg: 250px;
     }
   }
 
-  &__logo-container,
-  &__empty-container {
+  &__side-container {
     margin-left: 1.5rem;
 
     @include breakpoint('large') {
