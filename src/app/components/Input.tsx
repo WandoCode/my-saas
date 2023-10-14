@@ -8,7 +8,7 @@ import { PropsWithChildren } from 'react'
 interface Input extends PropsWithChildren {
   name: string
   type: 'text' | 'number' | 'password'
-  isError: boolean
+  isError: boolean | undefined
   className?: string
   infos?: string
   placeholder?: string
@@ -38,17 +38,21 @@ function Input({
       <div className="input__footer">
         {infos && <p className="input__infos">{infos}</p>}
         {isError && (
-          <p className="input__error">
-            <Image
-              src={'/alert-triangle.svg'}
-              height={14}
-              width={14}
-              aria-hidden={true}
-              alt=""
-              className="input__error-icon"
-            />
-            <ErrorMessage name={name} />
-          </p>
+          <ErrorMessage name={name}>
+            {(msg) => (
+              <p className="input__error">
+                <Image
+                  src={'/alert-triangle.svg'}
+                  height={14}
+                  width={14}
+                  aria-hidden={true}
+                  alt=""
+                  className="input__error-icon"
+                />
+                {msg}
+              </p>
+            )}
+          </ErrorMessage>
         )}
       </div>
     </div>
