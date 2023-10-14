@@ -41,21 +41,16 @@ function WorkWithUs() {
         >
           {({ isSubmitting }) => (
             <Form>
-              <div className="form-control">
-                <label htmlFor="firstName">First name:</label>
-                <Field type="text" name="firstName" id="firstName" />
-                <ErrorMessage name="firstName" />
-              </div>
-              <div className="form-control">
-                <label htmlFor="lastName">Last name:</label>
-                <Field type="text" name="lastName" id="lastName" />
-                <ErrorMessage name="lastName" />
-              </div>
-              <div className="form-control">
-                <label htmlFor="BCE">BCE:</label>
-                <Field type="text" name="BCE" id="BCE" />
-                <ErrorMessage name="BCE" />
-              </div>
+              <Input name="firstName" type="text">
+                First name:
+              </Input>
+              <Input name="lastName" type="text">
+                Last name:
+              </Input>
+              <Input name="BCE" type="text">
+                BCE:
+              </Input>
+
               <Button type="submit" disabled={isSubmitting}>
                 Submit
               </Button>
