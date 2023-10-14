@@ -1,14 +1,8 @@
 'use client'
 
-import { Button } from '@/app/components'
-import { ErrorMessage, Field, Form, Formik, useFormik } from 'formik'
+import { Button, Input } from '@/app/components'
+import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { object, string } from 'yup'
-
-interface FormValues {
-  lastName: string
-  firstName: string
-  BCE: string
-}
 
 const validationSchema = object({
   firstName: string()
@@ -25,8 +19,9 @@ const validationSchema = object({
 })
 
 function WorkWithUs() {
-  const handleSubmit = (values: any) => {
-    console.log(values)
+  const handleSubmit = async (values: any) => {
+    await new Promise((r) => setTimeout(r, 1500))
+    alert(values)
   }
 
   return (
@@ -44,24 +39,28 @@ function WorkWithUs() {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          <Form>
-            <div className="form-control">
-              <label htmlFor="firstName">First name:</label>
-              <Field type="text" name="firstName" id="firstName" />
-              <ErrorMessage name="firstName" />
-            </div>
-            <div className="form-control">
-              <label htmlFor="lastName">Last name:</label>
-              <Field type="text" name="lastName" id="lastName" />
-              <ErrorMessage name="lastName" />
-            </div>
-            <div className="form-control">
-              <label htmlFor="BCE">BCE:</label>
-              <Field type="text" name="BCE" id="BCE" />
-              <ErrorMessage name="BCE" />
-            </div>
-            <Button type="submit">Submit</Button>
-          </Form>
+          {({ isSubmitting }) => (
+            <Form>
+              <div className="form-control">
+                <label htmlFor="firstName">First name:</label>
+                <Field type="text" name="firstName" id="firstName" />
+                <ErrorMessage name="firstName" />
+              </div>
+              <div className="form-control">
+                <label htmlFor="lastName">Last name:</label>
+                <Field type="text" name="lastName" id="lastName" />
+                <ErrorMessage name="lastName" />
+              </div>
+              <div className="form-control">
+                <label htmlFor="BCE">BCE:</label>
+                <Field type="text" name="BCE" id="BCE" />
+                <ErrorMessage name="BCE" />
+              </div>
+              <Button type="submit" disabled={isSubmitting}>
+                Submit
+              </Button>
+            </Form>
+          )}
         </Formik>
       </section>
     </div>
