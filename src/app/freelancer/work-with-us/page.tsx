@@ -39,16 +39,29 @@ function WorkWithUs() {
           validationSchema={validationSchema}
           onSubmit={handleSubmit}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, errors }) => (
             <Form>
-              <Input name="firstName" type="text">
-                First name:
+              <Input
+                name="firstName"
+                type="text"
+                isError={errors.firstName !== undefined}
+              >
+                First name
               </Input>
-              <Input name="lastName" type="text">
-                Last name:
+              <Input
+                name="lastName"
+                type="text"
+                isError={errors.lastName !== undefined}
+              >
+                Last name
               </Input>
-              <Input name="BCE" type="text">
-                BCE:
+              <Input
+                name="BCE"
+                type="text"
+                infos="This must match the BCE number in your FlexiMed App profil"
+                isError={errors.BCE !== undefined}
+              >
+                BCE
               </Input>
 
               <Button type="submit" disabled={isSubmitting}>
