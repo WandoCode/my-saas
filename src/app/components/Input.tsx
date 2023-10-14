@@ -41,8 +41,8 @@ function Input({
           <p className="input__error">
             <Image
               src={'/alert-triangle.svg'}
-              height={15}
-              width={15}
+              height={14}
+              width={14}
               aria-hidden={true}
               alt=""
               className="input__error-icon"

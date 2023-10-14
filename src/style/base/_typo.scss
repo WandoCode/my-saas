@@ -3,6 +3,7 @@
 body {
   font-family: $font-primary;
   font-size: 16px;
+  color: var(--clr-default-250);
 }
 
 p {
@@ -14,7 +15,6 @@ p {
 }
 
 .heading {
-  color: var(--clr-default-250);
   font-family: $font-secondary;
   text-align: center;
   font-weight: 500;
