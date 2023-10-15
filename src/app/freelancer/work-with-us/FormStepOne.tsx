@@ -1,13 +1,11 @@
+'use client'
+
 import { Button, Input } from '@/components'
 import { showError } from '@/utils'
 import { Form, Formik } from 'formik'
 import { object, string } from 'yup'
 
-interface FormStepOneProps {
-  showNextStep: () => void
-}
-
-function FormStepOne({ showNextStep }: FormStepOneProps) {
+function FormStepOne() {
   const initialValues = {
     firstName: '',
     password: '',
@@ -15,10 +13,8 @@ function FormStepOne({ showNextStep }: FormStepOneProps) {
 
   const handleSubmit = async (values: any) => {
     const rep = await new Promise((r) => setTimeout(r, 1500))
-    console.log(rep)
     // TODO: If user is identified, connect user via redux => Pas utile a priori, utiliser un software d'authentification pour créer la session et utiliser les données de la session. Il faut prévoir une DB pour stoquer les data des user et autre..
     // Else
-    showNextStep()
   }
 
   return (
@@ -44,6 +40,8 @@ function FormStepOne({ showNextStep }: FormStepOneProps) {
           >
             Password
           </Input>
+          <a href="/api/auth/login">Login</a>
+          <a href="/api/auth/logout">Logout</a>
           <Button type="submit" disabled={isSubmitting}>
             Confirm
           </Button>

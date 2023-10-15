@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '../style/main.css'
 import { Header } from '../components'
+import { UserProvider } from '@auth0/nextjs-auth0/client'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -14,10 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
-        <Header></Header>
-        <main>{children}</main>
-      </body>
+      <UserProvider>
+        <body>
+          <Header></Header>
+          <main>{children}</main>
+        </body>
+      </UserProvider>
     </html>
   )
 }
