@@ -1,4 +1,4 @@
-import { Button, Input } from '@/app/components'
+import { Button, Input } from '@/components'
 import { showError } from '@/app/utils'
 import { Form, Formik } from 'formik'
 import { object, string } from 'yup'
@@ -9,15 +9,15 @@ interface FormStepOneProps {
 
 function FormStepOne({ showNextStep }: FormStepOneProps) {
   const initialValues = {
-    lastName: '',
     firstName: '',
-    BCE: '',
+    password: '',
   }
 
   const handleSubmit = async (values: any) => {
     const rep = await new Promise((r) => setTimeout(r, 1500))
     console.log(rep)
-
+    // TODO: If user is identified, connect user via redux => Pas utile a priori, utiliser un software d'authentification pour créer la session et utiliser les données de la session. Il faut prévoir une DB pour stoquer les data des user et autre..
+    // Else
     showNextStep()
   }
 
@@ -37,21 +37,13 @@ function FormStepOne({ showNextStep }: FormStepOneProps) {
             First name
           </Input>
           <Input
-            name="lastName"
-            type="text"
-            isError={errors.lastName !== undefined && touched.lastName}
+            name="password"
+            type="password"
+            isError={errors.password !== undefined && touched.password}
+            infos="Use the same credentials than ones used on FlexiMed App"
           >
-            Last name
+            Password
           </Input>
-          <Input
-            name="BCE"
-            type="text"
-            infos="This must match the BCE number in your FlexiMed App profil"
-            isError={errors.BCE !== undefined && touched.BCE}
-          >
-            BCE
-          </Input>
-
           <Button type="submit" disabled={isSubmitting}>
             Confirm
           </Button>
@@ -67,12 +59,7 @@ const validationSchema = object({
   firstName: string()
     .max(15, 'Must be 15 characters or less')
     .required('Required'),
-  lastName: string()
+  password: string()
     .max(20, 'Must be 20 characters or less')
-    .required('Required'),
-  BCE: string()
-    .max(8, 'Must be 8 numbers')
-    .min(8, 'Must be 8 numbers')
-    .matches(/[0-9]{8,9}/i, 'Invalid BCE number')
     .required('Required'),
 })

@@ -1,9 +1,6 @@
 'use client'
 
-import { Button, Input } from '@/app/components'
-import { Form, Formik } from 'formik'
 import { useState } from 'react'
-import { object, string } from 'yup'
 import { FormStepOne } from './FormStepOne'
 
 function WorkWithUs() {
@@ -32,3 +29,4 @@ function WorkWithUs() {
 }
 
 export default WorkWithUs
+// TODO: pour afficher le form de paiement, il faut vérifier que l'utilisateur est bien identifié.

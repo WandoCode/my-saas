@@ -1,4 +1,4 @@
-import { Button } from '../components'
+import { Button } from '../../components'
 import { linksTo } from '../content'
 
 function Freelancer() {
@@ -16,7 +16,7 @@ function Freelancer() {
             we recievied your invoice
           </h2>
 
-          <Button href={linksTo.appDownload}>Download</Button>
+          <Button href={linksTo.app}>Download</Button>
         </div>
       </section>
     </div>

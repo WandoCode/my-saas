@@ -1,7 +1,6 @@
 import clsx from 'clsx'
-import { Herr_Von_Muellerhoff } from 'next/font/google'
 import Link from 'next/link'
-import { ComponentProps, PropsWithChildren } from 'react'
+import { ComponentProps } from 'react'
 
 type ButtonAndAnchorProps = ComponentProps<'button'> & ComponentProps<'a'>
 

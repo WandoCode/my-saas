@@ -5,7 +5,7 @@ import { Button, Nav } from '.'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { linksTo } from '../content'
+import { linksTo } from '../app/content'
 
 function Header() {
   const [isTop, setIsTop] = useState<boolean>(true)

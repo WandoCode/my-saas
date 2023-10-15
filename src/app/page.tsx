@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Button } from './components'
+import { Button } from '../components'
 import { linksTo } from './content'
 
 export default function Home() {

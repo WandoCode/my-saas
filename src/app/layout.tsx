@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import '../style/main.css'
-import { Header } from './components'
+import { Header } from '../components'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
