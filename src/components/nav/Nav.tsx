@@ -5,7 +5,7 @@ import { NavItem } from '.'
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
 import { navLinks } from '@/content'
-import { activeScroll, desactiveScroll } from '@/app/utils'
+import { activeScroll, desactiveScroll } from '@/utils'
 
 interface PropsNav {
   baseClassName?: string
