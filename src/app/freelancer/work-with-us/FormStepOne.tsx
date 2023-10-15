@@ -3,18 +3,18 @@
 import { Button, Input } from '@/components'
 import { showError } from '@/utils'
 import { Form, Formik } from 'formik'
+import { signIn } from 'next-auth/react'
 import { object, string } from 'yup'
 
 function FormStepOne() {
   const initialValues = {
-    firstName: '',
+    username: '',
     password: '',
   }
 
   const handleSubmit = async (values: any) => {
-    const rep = await new Promise((r) => setTimeout(r, 1500))
-    // TODO: If user is identified, connect user via redux => Pas utile a priori, utiliser un software d'authentification pour créer la session et utiliser les données de la session. Il faut prévoir une DB pour stoquer les data des user et autre..
-    // Else
+    const rep = await signIn('credentials', { ...values, redirect: false })
+    console.log(rep)
   }
 
   return (
@@ -26,11 +26,11 @@ function FormStepOne() {
       {({ isSubmitting, errors, touched }) => (
         <Form>
           <Input
-            name="firstName"
+            name="username"
             type="text"
-            isError={showError(errors.firstName, touched.firstName)}
+            isError={showError(errors.username, touched.username)}
           >
-            First name
+            Username
           </Input>
           <Input
             name="password"
@@ -40,8 +40,6 @@ function FormStepOne() {
           >
             Password
           </Input>
-          <a href="/api/auth/login">Login</a>
-          <a href="/api/auth/logout">Logout</a>
           <Button type="submit" disabled={isSubmitting}>
             Confirm
           </Button>
@@ -54,7 +52,7 @@ function FormStepOne() {
 export { FormStepOne }
 
 const validationSchema = object({
-  firstName: string()
+  username: string()
     .max(15, 'Must be 15 characters or less')
     .required('Required'),
   password: string()
