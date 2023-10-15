@@ -1,5 +1,5 @@
 import { Button } from '../../components'
-import { linksTo } from '../content'
+import { linksTo } from '../../content'
 
 function Freelancer() {
   return (

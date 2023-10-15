@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { NavItem } from '.'
 import clsx from 'clsx'
 import { useEffect, useRef, useState } from 'react'
-import { navLinks } from '@/app/content'
+import { navLinks } from '@/content'
 import { activeScroll, desactiveScroll } from '@/app/utils'
 
 interface PropsNav {
